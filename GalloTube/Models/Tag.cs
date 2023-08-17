@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using GalloFlix.Models;
+
 namespace GalloTube.Models;
 
 [Table("Tag")]
@@ -13,5 +15,5 @@ public class Tag
     [Required(ErrorMessage = "O nome da Tag é obrigatório")]
     [StringLength(30, ErrorMessage = "O Nome deve possuir no máximo 30 caracteres")]
     public string Name { get; set; }    
-    public ICollection<VideoTag> Movies { get; set; }
+    public ICollection<VideoTag> Video { get; set; }
 }

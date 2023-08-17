@@ -14,38 +14,28 @@ public class Video
     [StringLength(100, ErrorMessage = "O Título deve possuir no máximo 100 caracteres")]
     public string Title { get; set; }
 
-    [Display(Name = "Título Original")]
-    [Required(ErrorMessage = "O Título Original é obrigatório")]
-    [StringLength(100, ErrorMessage = "O Título Original deve possuir no máximo 100 caracteres")]
-    public string OriginalTitle { get; set; }
 
-    [Display(Name = "Sinopse")]
-    [Required(ErrorMessage = "A Sinopse é obrigatória")]
-    [StringLength(8000, ErrorMessage = "A Sinopse deve possuir no máximo 5000 caracteres")]
-    public string Synopsis { get; set; }
+    [Display(Name = "Descrição")]
+    [Required(ErrorMessage = "A Descrição é obrigatória")]
+    [StringLength(8000, ErrorMessage = "A Descrição deve possuir no máximo 5000 caracteres")]
+    public string Description { get; set; }
 
-    [Column(TypeName = "Year")]
-    [Display(Name = "Ano de Estreia")]
-    [Required(ErrorMessage = "O Ano de Estreia é obrigatório")]
-    public Int16 MovieYear { get; set; }
+    [Column(TypeName = " UploadDate")]
+    [Display(Name = " UploadDate")]
+    [Required(ErrorMessage = " Date time é obrigatório")]
+    public Int16 VideoDate { get; set; }
 
     [Display(Name = "Duração (em minutos)")]
     [Required(ErrorMessage = "A Duração é obrigatória")]
     public Int16 Duration { get; set; }
 
-    [Display(Name = "Classificação Etária")]
-    [Required(ErrorMessage = "A Classificação Etária é obrigatória")]
-    public byte AgeRating { get; set; }
+
 
     [StringLength(200)]
-    [Display(Name = "Foto")]
-    public string Image { get; set; }
+    [Display(Name = "Thumbnail")]
+    public string Thumbnail	 { get; set; }
 
-    [NotMapped]
-    [Display(Name = "Duração")]
-    public string HourDuration { get {
-        return TimeSpan.FromMinutes(Duration) .ToString(@"%h'h 'mm'min'");
-    }}
-
-    public ICollection<VideoTag> Genres { get; set; }
+   [Display(Name = "VideoFile")]
+    [Required(ErrorMessage = "VideoFile é obrigatória")]
+    public Int16 VideoFile { get; set; }
 }
