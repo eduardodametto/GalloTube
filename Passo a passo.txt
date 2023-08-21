@@ -1,4 +1,4 @@
-Projeto Net.6 para aplicação dos conceitos de desenvolvimento front e back, dos componentes de Sistemas Web I e Interfaces Web II
+giProjeto Net.6 para aplicação dos conceitos de desenvolvimento front e back, dos componentes de Sistemas Web I e Interfaces Web II
 
 /* Configuração e Clone do Repositório GIT */
 git config --global user.name "José Antonio Gallo Junior"
