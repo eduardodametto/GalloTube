@@ -12,7 +12,7 @@ public class VideoRepository : IVideoRepository
     public void Create(Video model)
     {
         MySqlConnection connection = new(connectionString);
-        string sql = "insert into Video(Name,Description,UploadDate,Duration, Thumbnail,VideoFile) "
+        string sql = "insert into Video(Name, Description, UploadDate, Duration, Thumbnail,VideoFile) "
               + "values (@Name, @Description, @VideoDate, @Duration, @ Image, @VideoFile)";
         MySqlCommand command = new(sql, connection)
         {
