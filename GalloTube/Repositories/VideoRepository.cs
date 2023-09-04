@@ -70,13 +70,13 @@ public class VideoRepository : IVideoRepository
                 AgeRating = reader.GetByte("ageRating"),
                 Image = reader.GetString("image")
             };
-            movies.Add(movie);
+            videos.Add(video);
         }
         connection.Close();
         return videos;
     }
 
-    public Movie ReadById(int? id)
+    public Video ReadById(int? id)
     {
         MySqlConnection connection = new(connectionString);
         string sql = "select * from Movie where Id = @Id";
@@ -91,7 +91,7 @@ public class VideoRepository : IVideoRepository
         reader.Read();
         if (reader.HasRows)
         {
-            Movie movie = new()
+            Video video = new()
             {
                 Id = reader.GetInt32("id"),
                 Title = reader.GetString("title"),
